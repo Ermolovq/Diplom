@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=2 format=3 uid="uid://kg3gq6v4baj0"]
+
+[ext_resource type="Script" path="res://Classes/level_info.gd" id="1_adlhu"]
+
+[resource]
+script = ExtResource("1_adlhu")
+name = "The beginning of the adventure"
+description = "First level of a game."

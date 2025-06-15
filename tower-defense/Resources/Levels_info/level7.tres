@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=2 format=3 uid="uid://dxr2mrxmikc53"]
+
+[ext_resource type="Script" path="res://Classes/level_info.gd" id="1_k5a0t"]
+
+[resource]
+script = ExtResource("1_k5a0t")
+name = "Level 7"
+description = "Seventh level."

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="LevelInfo" load_steps=2 format=3 uid="uid://xlpymd8pa31g"]
+
+[ext_resource type="Script" path="res://Classes/level_info.gd" id="1_7wo5w"]
+
+[resource]
+script = ExtResource("1_7wo5w")
+name = "Level 3"
+description = "Third level"

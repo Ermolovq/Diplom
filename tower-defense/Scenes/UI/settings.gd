@@ -1,13 +1,19 @@
 extends Control
 
+@onready var fullscreen_checkbox = $MarginContainer/VBoxContainer2/fullscreenCheckbox
+@onready var resolution_option_button = $MarginContainer/VBoxContainer2/resolutionOptionButton
+@onready var sounds_slider = $MarginContainer/VBoxContainer2/Sounds/soundsHSlider
+@onready var music_slider = $MarginContainer/VBoxContainer2/Music/musicHSlider
 
 # Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	$MarginContainer/VBoxContainer2/Sounds/soundsHSlider.value = Global.soundsVolume
-	$MarginContainer/VBoxContainer2/Music/musicHSlider.value = Global.musicVolume
-	$MarginContainer/VBoxContainer2/displayModeOptionButton.selected = Global.displayMode
-	$MarginContainer/VBoxContainer2/resolutionOptionButton.selected = Global.resolution
-
+func _ready():
+	var video_settings = ConfigFileHandler.load_video_settings()
+	fullscreen_checkbox.button_pressed = video_settings.fullscreen
+	resolution_option_button.selected = video_settings.resolution
+	
+	var audio_settings = ConfigFileHandler.load_audio_settings()
+	sounds_slider.value = audio_settings.sounds * 100
+	music_slider.value = audio_settings.music * 100
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -19,16 +25,10 @@ func _on_back_pressed():
 
 
 func _on_save_pressed():
-	Global.soundsVolume = $MarginContainer/VBoxContainer2/Sounds/soundsHSlider.value
-	Global.musicVolume = $MarginContainer/VBoxContainer2/Music/musicHSlider.value
-	Global.displayMode = $MarginContainer/VBoxContainer2/displayModeOptionButton.selected
-	Global.resolution = $MarginContainer/VBoxContainer2/resolutionOptionButton.selected
-	print(DisplayServer.window_get_mode())
-	if Global.displayMode == 0:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	elif Global.displayMode == 1:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
-	if Global.resolution == 0:
-		DisplayServer.window_set_size(Vector2i(1920, 1080))
-	elif Global.resolution == 1:
-		DisplayServer.window_set_size(Vector2i(1280, 720))
+	ConfigFileHandler.save_video_settings("fullscreen", fullscreen_checkbox.button_pressed)
+	ConfigFileHandler.save_video_settings("resolution", resolution_option_button.selected)
+	
+	ConfigFileHandler.save_audio_settings("sounds", sounds_slider.value / 100)
+	ConfigFileHandler.save_audio_settings("music", music_slider.value / 100)
+	
+	ConfigFileHandler.use_settings()

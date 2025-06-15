@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://bnqw3jplbas1k"]
+[gd_scene load_steps=8 format=3 uid="uid://bnqw3jplbas1k"]
 
 [ext_resource type="Script" path="res://Scenes/UI/map.gd" id="1_7bsxg"]
-[ext_resource type="Texture2D" uid="uid://0gqkdsf26hyv" path="res://Interface/background.jpg" id="1_li1dc"]
 [ext_resource type="Texture2D" uid="uid://b0w182cxf65bb" path="res://Interface/button2.png" id="2_uh4ue"]
+[ext_resource type="Texture2D" uid="uid://dornn3gui60q3" path="res://Interface/button5.png" id="2_xgxp3"]
 [ext_resource type="Texture2D" uid="uid://b2n2ugnvjrx3x" path="res://Interface/settings.png" id="3_a4a2g"]
+[ext_resource type="Texture2D" uid="uid://d3ckhrfqp1oce" path="res://Interface/flag.png" id="5_ns24m"]
+[ext_resource type="Texture2D" uid="uid://do5ngnnvm7ms5" path="res://Interface/star.png" id="6_7pbuy"]
+[ext_resource type="Texture2D" uid="uid://dcsl0cpot4o50" path="res://Interface/button1.png" id="6_wnm57"]
 
 [node name="Map" type="Control"]
 layout_mode = 3
@@ -21,8 +24,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_li1dc")
-expand_mode = 1
+texture = ExtResource("2_xgxp3")
+flip_v = true
 
 [node name="backToMainMenuButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(190, 75)
@@ -52,6 +55,7 @@ vertical_alignment = 1
 
 [node name="settingsButton" type="TextureButton" parent="."]
 custom_minimum_size = Vector2(75, 75)
+layout_mode = 0
 offset_left = 220.0
 offset_top = 10.0
 offset_right = 295.0
@@ -60,5 +64,556 @@ texture_normal = ExtResource("3_a4a2g")
 ignore_texture_size = true
 stretch_mode = 0
 
+[node name="Level1" type="Node" parent="."]
+
+[node name="Star1" type="TextureRect" parent="Level1"]
+visible = false
+custom_minimum_size = Vector2(10, 10)
+offset_left = 26.0
+offset_top = 215.0
+offset_right = 56.0
+offset_bottom = 245.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star2" type="TextureRect" parent="Level1"]
+visible = false
+offset_left = 57.0
+offset_top = 215.0
+offset_right = 87.0
+offset_bottom = 245.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star3" type="TextureRect" parent="Level1"]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+offset_left = 88.0
+offset_top = 215.0
+offset_right = 118.0
+offset_bottom = 245.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="LevelButton" type="TextureButton" parent="Level1"]
+visible = false
+custom_minimum_size = Vector2(70, 70)
+offset_left = 39.0
+offset_top = 246.0
+offset_right = 109.0
+offset_bottom = 316.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_ns24m")
+stretch_mode = 0
+
+[node name="Level2" type="Node" parent="."]
+
+[node name="Star1" type="TextureRect" parent="Level2"]
+visible = false
+custom_minimum_size = Vector2(10, 10)
+offset_left = 127.0
+offset_top = 332.0
+offset_right = 157.0
+offset_bottom = 362.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star2" type="TextureRect" parent="Level2"]
+visible = false
+offset_left = 158.0
+offset_top = 332.0
+offset_right = 188.0
+offset_bottom = 362.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star3" type="TextureRect" parent="Level2"]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+offset_left = 189.0
+offset_top = 332.0
+offset_right = 219.0
+offset_bottom = 362.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="LevelButton" type="TextureButton" parent="Level2"]
+visible = false
+custom_minimum_size = Vector2(70, 70)
+offset_left = 140.0
+offset_top = 363.0
+offset_right = 210.0
+offset_bottom = 433.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_ns24m")
+stretch_mode = 0
+
+[node name="Level3" type="Node" parent="."]
+
+[node name="Star1" type="TextureRect" parent="Level3"]
+visible = false
+custom_minimum_size = Vector2(10, 10)
+offset_left = 282.0
+offset_top = 259.0
+offset_right = 312.0
+offset_bottom = 289.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star2" type="TextureRect" parent="Level3"]
+visible = false
+offset_left = 313.0
+offset_top = 259.0
+offset_right = 343.0
+offset_bottom = 289.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star3" type="TextureRect" parent="Level3"]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+offset_left = 344.0
+offset_top = 259.0
+offset_right = 374.0
+offset_bottom = 289.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="LevelButton" type="TextureButton" parent="Level3"]
+visible = false
+custom_minimum_size = Vector2(70, 70)
+offset_left = 294.0
+offset_top = 290.0
+offset_right = 364.0
+offset_bottom = 360.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_ns24m")
+stretch_mode = 0
+
+[node name="Level4" type="Node" parent="."]
+
+[node name="Star1" type="TextureRect" parent="Level4"]
+visible = false
+custom_minimum_size = Vector2(10, 10)
+offset_left = 429.0
+offset_top = 222.0
+offset_right = 459.0
+offset_bottom = 252.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star2" type="TextureRect" parent="Level4"]
+visible = false
+offset_left = 460.0
+offset_top = 222.0
+offset_right = 490.0
+offset_bottom = 252.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star3" type="TextureRect" parent="Level4"]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+offset_left = 491.0
+offset_top = 222.0
+offset_right = 521.0
+offset_bottom = 252.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="LevelButton" type="TextureButton" parent="Level4"]
+visible = false
+custom_minimum_size = Vector2(70, 70)
+offset_left = 441.0
+offset_top = 253.0
+offset_right = 511.0
+offset_bottom = 323.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_ns24m")
+stretch_mode = 0
+
+[node name="Level5" type="Node" parent="."]
+
+[node name="Star1" type="TextureRect" parent="Level5"]
+visible = false
+custom_minimum_size = Vector2(10, 10)
+offset_left = 612.0
+offset_top = 284.0
+offset_right = 642.0
+offset_bottom = 314.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star2" type="TextureRect" parent="Level5"]
+visible = false
+offset_left = 643.0
+offset_top = 284.0
+offset_right = 673.0
+offset_bottom = 314.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star3" type="TextureRect" parent="Level5"]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+offset_left = 674.0
+offset_top = 284.0
+offset_right = 704.0
+offset_bottom = 314.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="LevelButton" type="TextureButton" parent="Level5"]
+visible = false
+custom_minimum_size = Vector2(70, 70)
+offset_left = 624.0
+offset_top = 315.0
+offset_right = 694.0
+offset_bottom = 385.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_ns24m")
+stretch_mode = 0
+
+[node name="Level6" type="Node" parent="."]
+
+[node name="Star1" type="TextureRect" parent="Level6"]
+visible = false
+custom_minimum_size = Vector2(10, 10)
+offset_left = 729.0
+offset_top = 233.0
+offset_right = 759.0
+offset_bottom = 263.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star2" type="TextureRect" parent="Level6"]
+visible = false
+offset_left = 760.0
+offset_top = 233.0
+offset_right = 790.0
+offset_bottom = 263.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star3" type="TextureRect" parent="Level6"]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+offset_left = 791.0
+offset_top = 233.0
+offset_right = 821.0
+offset_bottom = 263.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="LevelButton" type="TextureButton" parent="Level6"]
+visible = false
+custom_minimum_size = Vector2(70, 70)
+offset_left = 742.0
+offset_top = 264.0
+offset_right = 812.0
+offset_bottom = 334.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_ns24m")
+stretch_mode = 0
+
+[node name="Level7" type="Node" parent="."]
+
+[node name="Star1" type="TextureRect" parent="Level7"]
+visible = false
+custom_minimum_size = Vector2(10, 10)
+offset_left = 802.0
+offset_top = 350.0
+offset_right = 832.0
+offset_bottom = 380.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star2" type="TextureRect" parent="Level7"]
+visible = false
+offset_left = 833.0
+offset_top = 350.0
+offset_right = 863.0
+offset_bottom = 380.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star3" type="TextureRect" parent="Level7"]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+offset_left = 864.0
+offset_top = 350.0
+offset_right = 894.0
+offset_bottom = 380.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="LevelButton" type="TextureButton" parent="Level7"]
+visible = false
+custom_minimum_size = Vector2(70, 70)
+offset_left = 815.0
+offset_top = 381.0
+offset_right = 885.0
+offset_bottom = 451.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_ns24m")
+stretch_mode = 0
+
+[node name="Level8" type="Node" parent="."]
+
+[node name="Star1" type="TextureRect" parent="Level8"]
+visible = false
+custom_minimum_size = Vector2(10, 10)
+offset_left = 879.0
+offset_top = 254.0
+offset_right = 909.0
+offset_bottom = 284.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star2" type="TextureRect" parent="Level8"]
+visible = false
+offset_left = 910.0
+offset_top = 254.0
+offset_right = 940.0
+offset_bottom = 284.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star3" type="TextureRect" parent="Level8"]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+offset_left = 941.0
+offset_top = 254.0
+offset_right = 971.0
+offset_bottom = 284.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="LevelButton" type="TextureButton" parent="Level8"]
+visible = false
+custom_minimum_size = Vector2(70, 70)
+offset_left = 892.0
+offset_top = 285.0
+offset_right = 962.0
+offset_bottom = 355.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_ns24m")
+stretch_mode = 0
+
+[node name="Level9" type="Node" parent="."]
+
+[node name="Star1" type="TextureRect" parent="Level9"]
+visible = false
+custom_minimum_size = Vector2(10, 10)
+offset_left = 1017.0
+offset_top = 227.0
+offset_right = 1047.0
+offset_bottom = 257.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star2" type="TextureRect" parent="Level9"]
+visible = false
+offset_left = 1048.0
+offset_top = 227.0
+offset_right = 1078.0
+offset_bottom = 257.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star3" type="TextureRect" parent="Level9"]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+offset_left = 1079.0
+offset_top = 227.0
+offset_right = 1109.0
+offset_bottom = 257.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="LevelButton" type="TextureButton" parent="Level9"]
+visible = false
+custom_minimum_size = Vector2(70, 70)
+offset_left = 1029.0
+offset_top = 258.0
+offset_right = 1099.0
+offset_bottom = 328.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_ns24m")
+stretch_mode = 0
+
+[node name="Level10" type="Node" parent="."]
+
+[node name="Star1" type="TextureRect" parent="Level10"]
+visible = false
+custom_minimum_size = Vector2(10, 10)
+offset_left = 1092.0
+offset_top = 347.0
+offset_right = 1122.0
+offset_bottom = 377.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star2" type="TextureRect" parent="Level10"]
+visible = false
+offset_left = 1123.0
+offset_top = 347.0
+offset_right = 1153.0
+offset_bottom = 377.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="Star3" type="TextureRect" parent="Level10"]
+visible = false
+custom_minimum_size = Vector2(30, 0)
+offset_left = 1154.0
+offset_top = 347.0
+offset_right = 1184.0
+offset_bottom = 377.0
+texture = ExtResource("6_7pbuy")
+expand_mode = 1
+
+[node name="LevelButton" type="TextureButton" parent="Level10"]
+visible = false
+custom_minimum_size = Vector2(70, 70)
+offset_left = 1104.0
+offset_top = 378.0
+offset_right = 1174.0
+offset_bottom = 448.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_ns24m")
+stretch_mode = 0
+
+[node name="Level Info" type="VBoxContainer" parent="."]
+visible = false
+z_index = 1
+layout_mode = 0
+offset_left = 140.0
+offset_top = 60.0
+offset_right = 1140.0
+offset_bottom = 660.0
+alignment = 1
+
+[node name="Background" type="TextureRect" parent="Level Info"]
+clip_contents = true
+custom_minimum_size = Vector2(1000, 600)
+layout_mode = 2
+texture = ExtResource("6_wnm57")
+expand_mode = 1
+
+[node name="Buttons" type="HBoxContainer" parent="Level Info/Background"]
+layout_mode = 2
+offset_left = 50.0
+offset_top = 430.0
+offset_right = 950.0
+offset_bottom = 530.0
+theme_override_constants/separation = 200
+
+[node name="CloseButton" type="TextureButton" parent="Level Info/Background/Buttons"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("2_xgxp3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Level Info/Background/Buttons/CloseButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.439216)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 40
+text = "Close"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartButton" type="TextureButton" parent="Level Info/Background/Buttons"]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+texture_normal = ExtResource("2_xgxp3")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Level Info/Background/Buttons/StartButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.439216)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 40
+text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Desciption" type="Label" parent="Level Info/Background"]
+custom_minimum_size = Vector2(500, 260)
+layout_mode = 0
+offset_left = 440.0
+offset_top = 160.0
+offset_right = 940.0
+offset_bottom = 420.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.439216)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 25
+
+[node name="Name" type="Label" parent="Level Info/Background"]
+custom_minimum_size = Vector2(900, 50)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -450.0
+offset_top = 100.0
+offset_right = 450.0
+offset_bottom = 155.0
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.439216)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_constants/shadow_outline_size = 0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [connection signal="pressed" from="backToMainMenuButton" to="." method="_on_back_to_main_menu_button_pressed"]
 [connection signal="pressed" from="settingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Level1/LevelButton" to="." method="_on_level_button_1_pressed"]
+[connection signal="pressed" from="Level2/LevelButton" to="." method="_on_level_button_2_pressed"]
+[connection signal="pressed" from="Level3/LevelButton" to="." method="_on_level_button_3_pressed"]
+[connection signal="pressed" from="Level4/LevelButton" to="." method="_on_level_button_4_pressed"]
+[connection signal="pressed" from="Level5/LevelButton" to="." method="_on_level_button_5_pressed"]
+[connection signal="pressed" from="Level6/LevelButton" to="." method="_on_level_button_6_pressed"]
+[connection signal="pressed" from="Level7/LevelButton" to="." method="_on_level_button_7_pressed"]
+[connection signal="pressed" from="Level8/LevelButton" to="." method="_on_level_button_8_pressed"]
+[connection signal="pressed" from="Level9/LevelButton" to="." method="_on_level_button_9_pressed"]
+[connection signal="pressed" from="Level10/LevelButton" to="." method="_on_level_button_10_pressed"]
+[connection signal="pressed" from="Level Info/Background/Buttons/CloseButton" to="." method="_on_close_button_pressed"]
+[connection signal="pressed" from="Level Info/Background/Buttons/StartButton" to="." method="_on_start_button_pressed"]

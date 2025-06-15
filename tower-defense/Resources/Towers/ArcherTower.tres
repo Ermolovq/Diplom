@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TowerStats" load_steps=2 format=3 uid="uid://c1obb6mlcc48d"]
+
+[ext_resource type="Script" path="res://Classes/tower_stats.gd" id="1_kfvfg"]
+
+[resource]
+script = ExtResource("1_kfvfg")
+tower_name = "Archer Tower"
+tower_textures_path = "res://Textures/Towers/ArrowTower.png"
+attack_type = 0
+cost0 = 60
+attack0 = 10
+radius0 = 10
+attack_speed0 = 2.0
+cost1 = 100
+attack1 = 15
+radius1 = 12
+attack_speed1 = 1.5
+cost2 = 150
+attack2 = 20
+radius2 = 14
+attack_speed2 = 1.0
+cost3 = 210
+attack3 = 20
+radius3 = 16
+attack_speed3 = 0.5

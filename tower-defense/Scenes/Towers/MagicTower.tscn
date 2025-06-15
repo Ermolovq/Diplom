@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqqhpowwy81cr"]
+
+[ext_resource type="Script" path="res://Scenes/Towers/magic_tower.gd" id="1_8k7db"]
+[ext_resource type="Texture2D" uid="uid://cqewkqu03n1cx" path="res://Textures/Towers/MagicTower1.png" id="2_6wouu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lfqmf"]
+radius = 245.522
+
+[node name="MagicTower" type="StaticBody2D"]
+script = ExtResource("1_8k7db")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("2_6wouu")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_lfqmf")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

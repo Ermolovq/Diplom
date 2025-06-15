@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://byuww17iumrjw"]
+
+[ext_resource type="Script" path="res://Scenes/Towers/cannon_tower.gd" id="1_gghxb"]
+[ext_resource type="Texture2D" uid="uid://bi6syy5ju8lxm" path="res://Textures/Towers/CannonTower1.png" id="2_p04vv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nwnle"]
+radius = 245.522
+
+[node name="CannonTower" type="StaticBody2D"]
+script = ExtResource("1_gghxb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_p04vv")
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource("CircleShape2D_nwnle")
+
+[connection signal="body_entered" from="Range" to="." method="_on_range_body_entered"]
+[connection signal="body_exited" from="Range" to="." method="_on_range_body_exited"]

@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4mq4114b10pu"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/knight.gd" id="1_7rrta"]
+[ext_resource type="Texture2D" uid="uid://47dbicqao5r5" path="res://Textures/Enemies/knight.png" id="2_p6bkn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_afxpv"]
+size = Vector2(62, 62)
+
+[node name="HeavyEnemy" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_7rrta")
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+position = Vector2(-2.98023e-08, -2.98023e-08)
+scale = Vector2(0.96875, 0.96875)
+texture = ExtResource("2_p6bkn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("RectangleShape2D_afxpv")
+
+[node name="HPBar" type="ProgressBar" parent="Enemy"]
+z_index = 1
+custom_minimum_size = Vector2(0, 10)
+offset_left = -40.0
+offset_top = -46.0
+offset_right = 40.0
+offset_bottom = -36.0
+show_percentage = false

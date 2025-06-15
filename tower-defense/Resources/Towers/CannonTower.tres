@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TowerStats" load_steps=2 format=3 uid="uid://g5imwo30sibu"]
+
+[ext_resource type="Script" path="res://Classes/tower_stats.gd" id="1_a7tfk"]
+
+[resource]
+script = ExtResource("1_a7tfk")
+tower_name = "Cannon Tower"
+tower_textures_path = "res://Textures/Towers/CannonTower.png"
+attack_type = 0
+cost0 = 90
+attack0 = 35
+radius0 = 10
+attack_speed0 = 7
+cost1 = 140
+attack1 = 70
+radius1 = 11
+attack_speed1 = 7
+cost2 = 200
+attack2 = 140
+radius2 = 12
+attack_speed2 = 7
+cost3 = 260
+attack3 = 280
+radius3 = 13
+attack_speed3 = 7

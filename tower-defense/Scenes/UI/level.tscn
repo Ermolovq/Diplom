@@ -1,0 +1,473 @@
+[gd_scene load_steps=12 format=3 uid="uid://l2mwbrkhiuyo"]
+
+[ext_resource type="Script" path="res://Scenes/UI/level.gd" id="1_0afws"]
+[ext_resource type="Texture2D" uid="uid://dcsl0cpot4o50" path="res://Interface/button1.png" id="1_y3l8h"]
+[ext_resource type="Texture2D" uid="uid://b0w182cxf65bb" path="res://Interface/button2.png" id="2_sfth0"]
+[ext_resource type="Texture2D" uid="uid://dp1otemxftkdh" path="res://Interface/heart.png" id="4_31r8m"]
+[ext_resource type="Texture2D" uid="uid://cohxnijxi7g8" path="res://Interface/coins.png" id="5_tfuhj"]
+[ext_resource type="Texture2D" uid="uid://bgf6x6tgxrmnx" path="res://Interface/button3.png" id="6_b2whf"]
+[ext_resource type="Texture2D" uid="uid://ce088a5dhnxmo" path="res://Textures/Towers/ArrowTower.png" id="7_21ykh"]
+[ext_resource type="Texture2D" uid="uid://c3qutokgymsff" path="res://Interface/button4.png" id="7_o178i"]
+[ext_resource type="Texture2D" uid="uid://bs2du2nobx8ru" path="res://Textures/Towers/MagicTower.png" id="8_b04m2"]
+[ext_resource type="Texture2D" uid="uid://12wx17xr2sgc" path="res://Interface/button6.png" id="9_mtrpm"]
+[ext_resource type="Texture2D" uid="uid://cvgvh5edm8vs6" path="res://Textures/Towers/CannonTower.png" id="10_ranu4"]
+
+[node name="Level" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0afws")
+
+[node name="MenuButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 200.0
+offset_bottom = 85.0
+texture_normal = ExtResource("2_sfth0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MenuButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerStats" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 970.0
+offset_top = 10.0
+offset_right = 1270.0
+offset_bottom = 90.0
+texture = ExtResource("1_y3l8h")
+expand_mode = 1
+
+[node name="HPTexture" type="TextureRect" parent="PlayerStats"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 22.0
+offset_right = 208.0
+offset_bottom = 62.0
+texture = ExtResource("4_31r8m")
+expand_mode = 1
+
+[node name="GoldTexture" type="TextureRect" parent="PlayerStats"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 23.0
+offset_right = 70.0
+offset_bottom = 63.0
+texture = ExtResource("5_tfuhj")
+
+[node name="MaxHP" type="Label" parent="PlayerStats"]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 22.0
+offset_right = 281.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 25
+text = "/20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HP" type="Label" parent="PlayerStats"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 22.0
+offset_right = 248.0
+offset_bottom = 64.0
+theme_override_font_sizes/font_size = 25
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Gold" type="Label" parent="PlayerStats"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 23.0
+offset_right = 163.0
+offset_bottom = 65.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Menu" type="TextureRect" parent="."]
+process_mode = 3
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 140.0
+offset_top = 110.0
+offset_right = 1140.0
+offset_bottom = 610.0
+texture = ExtResource("6_b2whf")
+expand_mode = 1
+
+[node name="Continue" type="TextureButton" parent="Menu"]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 0
+offset_left = 720.0
+offset_top = 350.0
+offset_right = 910.0
+offset_bottom = 425.0
+texture_normal = ExtResource("2_sfth0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Menu/Continue"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Restart" type="TextureButton" parent="Menu"]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 0
+offset_left = 405.0
+offset_top = 350.0
+offset_right = 595.0
+offset_bottom = 425.0
+texture_normal = ExtResource("2_sfth0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Menu/Restart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit level" type="TextureButton" parent="Menu"]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 0
+offset_left = 90.0
+offset_top = 350.0
+offset_right = 280.0
+offset_bottom = 425.0
+texture_normal = ExtResource("2_sfth0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Menu/Exit level"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TowerMenu" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ArcherTower" type="TextureButton" parent="TowerMenu"]
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 0
+offset_left = 510.0
+offset_top = 10.0
+offset_right = 590.0
+offset_bottom = 90.0
+texture_normal = ExtResource("7_o178i")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Icon" type="TextureRect" parent="TowerMenu/ArcherTower"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 68.0
+offset_bottom = 69.0
+texture = ExtResource("7_21ykh")
+expand_mode = 1
+
+[node name="ArcherTowerPrice" type="Label" parent="TowerMenu"]
+layout_mode = 1
+offset_left = 510.0
+offset_top = 90.0
+offset_right = 590.0
+offset_bottom = 125.0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagicTower" type="TextureButton" parent="TowerMenu"]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 10.0
+offset_right = 680.0
+offset_bottom = 90.0
+texture_normal = ExtResource("6_b2whf")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Icon" type="TextureRect" parent="TowerMenu/MagicTower"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 68.0
+offset_bottom = 69.0
+texture = ExtResource("8_b04m2")
+expand_mode = 1
+flip_h = true
+
+[node name="MagicTowerPrice" type="Label" parent="TowerMenu"]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 90.0
+offset_right = 680.0
+offset_bottom = 125.0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CannonTower" type="TextureButton" parent="TowerMenu"]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 10.0
+offset_right = 770.0
+offset_bottom = 90.0
+texture_normal = ExtResource("9_mtrpm")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Icon" type="TextureRect" parent="TowerMenu/CannonTower"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 13.0
+offset_right = 68.0
+offset_bottom = 69.0
+texture = ExtResource("10_ranu4")
+expand_mode = 1
+
+[node name="CannonTowerPrice" type="Label" parent="TowerMenu"]
+layout_mode = 0
+offset_left = 690.0
+offset_top = 90.0
+offset_right = 770.0
+offset_bottom = 125.0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuLose" type="TextureRect" parent="."]
+process_mode = 3
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 140.0
+offset_top = 110.0
+offset_right = 1140.0
+offset_bottom = 610.0
+texture = ExtResource("6_b2whf")
+expand_mode = 1
+
+[node name="Restart" type="TextureButton" parent="MenuLose"]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 0
+offset_left = 405.0
+offset_top = 350.0
+offset_right = 595.0
+offset_bottom = 425.0
+texture_normal = ExtResource("2_sfth0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MenuLose/Restart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit level" type="TextureButton" parent="MenuLose"]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 0
+offset_left = 90.0
+offset_top = 350.0
+offset_right = 280.0
+offset_bottom = 425.0
+texture_normal = ExtResource("2_sfth0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MenuLose/Exit level"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="MenuLose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "You lost"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuWin" type="TextureRect" parent="."]
+process_mode = 3
+visible = false
+z_index = 2
+layout_mode = 0
+offset_left = 140.0
+offset_top = 110.0
+offset_right = 1140.0
+offset_bottom = 610.0
+texture = ExtResource("6_b2whf")
+expand_mode = 1
+
+[node name="Restart" type="TextureButton" parent="MenuWin"]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 0
+offset_left = 405.0
+offset_top = 350.0
+offset_right = 595.0
+offset_bottom = 425.0
+texture_normal = ExtResource("2_sfth0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MenuWin/Restart"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "Restart"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Exit level" type="TextureButton" parent="MenuWin"]
+custom_minimum_size = Vector2(190, 75)
+layout_mode = 0
+offset_left = 90.0
+offset_top = 350.0
+offset_right = 280.0
+offset_bottom = 425.0
+texture_normal = ExtResource("2_sfth0")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MenuWin/Exit level"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="MenuWin"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 25
+text = "You won!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MenuButton" to="." method="_on_menu_button_pressed"]
+[connection signal="pressed" from="Menu/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Menu/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Menu/Exit level" to="." method="_on_exit_level_pressed"]
+[connection signal="pressed" from="TowerMenu/ArcherTower" to="." method="_on_archer_tower_pressed"]
+[connection signal="pressed" from="TowerMenu/MagicTower" to="." method="_on_magic_tower_pressed"]
+[connection signal="pressed" from="TowerMenu/CannonTower" to="." method="_on_cannon_tower_pressed"]
+[connection signal="pressed" from="MenuLose/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="MenuLose/Exit level" to="." method="_on_exit_level_pressed"]
+[connection signal="pressed" from="MenuWin/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="MenuWin/Exit level" to="." method="_on_exit_level_pressed"]

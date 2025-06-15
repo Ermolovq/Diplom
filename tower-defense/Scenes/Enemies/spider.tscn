@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b852dnunc6xgb"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/spider.gd" id="1_5jn5a"]
+[ext_resource type="Texture2D" uid="uid://ca1m2i60xjwxr" path="res://Textures/Enemies/spider.png" id="2_jdiaw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_efii1"]
+size = Vector2(62, 62)
+
+[node name="FastEnemy" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_5jn5a")
+
+[node name="Enemy" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Enemy"]
+position = Vector2(1.90735e-06, -2.98023e-08)
+scale = Vector2(0.96875, 0.96875)
+texture = ExtResource("2_jdiaw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
+shape = SubResource("RectangleShape2D_efii1")
+
+[node name="HPBar" type="ProgressBar" parent="Enemy"]
+z_index = 1
+custom_minimum_size = Vector2(0, 10)
+offset_left = -40.0
+offset_top = -46.0
+offset_right = 40.0
+offset_bottom = -36.0
+show_percentage = false

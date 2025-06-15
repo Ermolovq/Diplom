@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="TowerStats" load_steps=2 format=3 uid="uid://bdx8yeh6hs6xn"]
+
+[ext_resource type="Script" path="res://Classes/tower_stats.gd" id="1_u0gg7"]
+
+[resource]
+script = ExtResource("1_u0gg7")
+tower_name = "Magic Tower"
+tower_textures_path = "res://Textures/Towers/MagicTower.png"
+attack_type = 1
+cost0 = 75
+attack0 = 10
+radius0 = 8
+attack_speed0 = 2
+cost1 = 115
+attack1 = 20
+radius1 = 10
+attack_speed1 = 2
+cost2 = 170
+attack2 = 40
+radius2 = 12
+attack_speed2 = 2
+cost3 = 230
+attack3 = 80
+radius3 = 14
+attack_speed3 = 2

@@ -87,7 +87,7 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_constants/outline_size = 3
 theme_override_constants/shadow_outline_size = 0
 theme_override_font_sizes/font_size = 40
-text = "Display mode"
+text = "Fullscreen"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -131,14 +131,12 @@ layout_mode = 2
 value = 50.0
 rounded = true
 
-[node name="displayModeOptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer2"]
-custom_minimum_size = Vector2(0, 50)
+[node name="fullscreenCheckbox" type="CheckBox" parent="MarginContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-selected = 0
-item_count = 2
-popup/item_0/text = "Fullscreen"
-popup/item_1/text = "Windowed"
-popup/item_1/id = 1
+theme_override_constants/icon_max_width = 50
+theme_override_font_sizes/font_size = 50
+expand_icon = true
 
 [node name="resolutionOptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 50)

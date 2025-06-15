@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3 uid="uid://bjqpf583lirjm"]
+
+[ext_resource type="Script" path="res://Classes/enemy_stats.gd" id="1_hfp84"]
+
+[resource]
+script = ExtResource("1_hfp84")
+enemy_textures_path = "res://Textures/Enemies/common.png"
+max_hp = 20
+speed = 50
+phys_def = 1.0
+magic_def = 1.0
+gold = 10
