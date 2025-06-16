@@ -1,1 +1,1 @@
-extends "res://Scenes/Towers/Towers.gd"
+extends Towers

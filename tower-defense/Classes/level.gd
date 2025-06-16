@@ -17,7 +17,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func place_tower(tower_place):
+func place_tower(tower_place: int):
 	var current_tower = get_parent().current_tower
 	var tower_place_node = get_node("Towers/TowerPlace%d" % tower_place)
 	if current_tower == 0:
